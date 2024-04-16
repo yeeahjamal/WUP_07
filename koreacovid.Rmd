@@ -1,7 +1,7 @@
 ---
 title: "Initial Korean covid 19"
-author: "your name here"
-date: "todays date"
+author: "Jamal Evans"
+date: "spring 2024"
 output:
   html_document: default
   pdf_document: default
@@ -27,9 +27,10 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
+# Introduction
 
 
-
+# Methods
 
 
 ## Graphical results - use ggplot commands to do this  
