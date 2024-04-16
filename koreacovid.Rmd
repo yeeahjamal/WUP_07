@@ -31,7 +31,7 @@ state of a patient must be died or alive - we adjust that as well
 
 $H_0$ is that there is no difference in death rate based on sex.
 
-$H_A$
+$H_A$ is that there IS a difference in death rate
 
 # Methods
 variables for this study are comprised of Sex and result 'dead' or 'alive'
@@ -43,21 +43,37 @@ This means we use cat~cat helper file.
 ## Graphical results - use ggplot commands to do this  
 
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
-  
+```
 
-
-
-
-
+This Bar Graph shows that males are more likely to die according to percentage 60 percent male 40 percent female.
   
 ## Numerical results
 
-
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+The Numerical Data shows higher percentage of death in males from 64 percent to 36 for females.
 ## Inferential results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
+The Chi-squared test (p-value= 0.0012) shows that the new p-value is more than 0.05, meaning we reject the null
+This means there IS a significant difference in death rate based on Sex.
 
+The Fisher exact test (p-value=0.0009) s.
+The odds ratio is 2.3 and is not equal to 1 this means that we reject the null ($H_0$).
 
 ## Conclusions
-
+The original question was "is there a difference in death rate in the Korean data set based on Sex".
+The data plot shows that there is a considerable difference in death higher for males than females.
+The numerical result confirmed the percentage from 1.3 to 3 in death rating. In the end we reject the null
