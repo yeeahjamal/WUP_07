@@ -29,9 +29,16 @@ state of a patient must be died or alive - we adjust that as well
 
 # Introduction
 
+$H_0$ is that there is no difference in death rate based on sex.
+
+$H_A$
 
 # Methods
+variables for this study are comprised of Sex and result 'dead' or 'alive'
 
+We want to know if result depends on Sex
+Result is a factor variable (Categorical), while Sex is also a factor Categorical variable.
+This means we use cat~cat helper file.
 
 ## Graphical results - use ggplot commands to do this  
 
